@@ -80,7 +80,7 @@ class PlantCollectionViewCell: UICollectionViewCell {
     
     private let plantDescriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = AppFonts.body
+        label.font = AppFonts.subtext
         label.numberOfLines = 3
         return label
     }()

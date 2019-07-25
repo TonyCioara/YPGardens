@@ -11,12 +11,12 @@ import UIKit
 class MainViewController: UIViewController {
 
     private var plantData: [Plant] = [
-        Plant(name: "Planty", description: "Succulent", waterLevel: 0.7, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "Secretly Planty", waterLevel: 0.7, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Planty", description: "Succulent", waterLevel: 0.7, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "The best plant in the business of the best plants ever", waterLevel: 0.7, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Planty", description: "Succulent", waterLevel: 0.7, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "Secretly Planty", waterLevel: 0.7, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Planty", description: "Succulent", waterLevel: 0.1, waterLimit: 0.1, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "Secretly Planty", waterLevel: 0.3, waterLimit: 0.2, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Planty", description: "Succulent", waterLevel: 0.5, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "The best plant in the business of the best plants ever", waterLevel: 0.7, waterLimit: 0.5, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Planty", description: "Succulent", waterLevel: 0.9, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "Secretly Planty", waterLevel: 1, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
     ]
     
     private let collectionView: UICollectionView = {
