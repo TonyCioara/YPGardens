@@ -3,25 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		565F52DF22E90FEC00B06350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F52DE22E90FEC00B06350 /* AppDelegate.swift */; };
-		565F52E122E90FEC00B06350 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F52E022E90FEC00B06350 /* ViewController.swift */; };
-		565F52E422E90FEC00B06350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565F52E222E90FEC00B06350 /* Main.storyboard */; };
+		565F52E122E90FEC00B06350 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F52E022E90FEC00B06350 /* MainViewController.swift */; };
 		565F52E622E90FEE00B06350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565F52E522E90FEE00B06350 /* Assets.xcassets */; };
 		565F52E922E90FEE00B06350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565F52E722E90FEE00B06350 /* LaunchScreen.storyboard */; };
+		565F52F122E9107B00B06350 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F52F022E9107B00B06350 /* Plant.swift */; };
+		565F52F322E9133A00B06350 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F52F222E9133A00B06350 /* PlantTableViewCell.swift */; };
+		567E14A922E925DC00ED72E8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14A822E925DC00ED72E8 /* Style.swift */; };
+		567E14AB22E92B0700ED72E8 /* PlantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */; };
+		567E14AD22E930BB00ED72E8 /* WaterLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */; };
+		E095E66FC5045036C8D654EA /* Pods_YPGardens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05FB40B1F89EC879E80E83C /* Pods_YPGardens.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		565F52DB22E90FEC00B06350 /* YPGardens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YPGardens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565F52DE22E90FEC00B06350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		565F52E022E90FEC00B06350 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		565F52E322E90FEC00B06350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		565F52E022E90FEC00B06350 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		565F52E522E90FEE00B06350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		565F52E822E90FEE00B06350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		565F52EA22E90FEE00B06350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		565F52F022E9107B00B06350 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		565F52F222E9133A00B06350 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		567E14A822E925DC00ED72E8 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailsViewController.swift; sourceTree = "<group>"; };
+		567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLevelView.swift; sourceTree = "<group>"; };
+		A5F3F0B2EE9351F8A24083EA /* Pods-YPGardens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPGardens.release.xcconfig"; path = "Target Support Files/Pods-YPGardens/Pods-YPGardens.release.xcconfig"; sourceTree = "<group>"; };
+		CE6DCFC62D3A6045DAD7166D /* Pods-YPGardens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPGardens.debug.xcconfig"; path = "Target Support Files/Pods-YPGardens/Pods-YPGardens.debug.xcconfig"; sourceTree = "<group>"; };
+		F05FB40B1F89EC879E80E83C /* Pods_YPGardens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YPGardens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E095E66FC5045036C8D654EA /* Pods_YPGardens.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				565F52DD22E90FEC00B06350 /* YPGardens */,
 				565F52DC22E90FEC00B06350 /* Products */,
+				FC83B5EE79D753375F79CEA8 /* Pods */,
+				EF328E99272CA87FEB866CA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +70,34 @@
 			isa = PBXGroup;
 			children = (
 				565F52DE22E90FEC00B06350 /* AppDelegate.swift */,
-				565F52E022E90FEC00B06350 /* ViewController.swift */,
-				565F52E222E90FEC00B06350 /* Main.storyboard */,
+				565F52E022E90FEC00B06350 /* MainViewController.swift */,
+				567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */,
+				567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */,
+				565F52F222E9133A00B06350 /* PlantTableViewCell.swift */,
+				565F52F022E9107B00B06350 /* Plant.swift */,
 				565F52E522E90FEE00B06350 /* Assets.xcassets */,
 				565F52E722E90FEE00B06350 /* LaunchScreen.storyboard */,
 				565F52EA22E90FEE00B06350 /* Info.plist */,
+				567E14A822E925DC00ED72E8 /* Style.swift */,
 			);
 			path = YPGardens;
+			sourceTree = "<group>";
+		};
+		EF328E99272CA87FEB866CA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F05FB40B1F89EC879E80E83C /* Pods_YPGardens.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC83B5EE79D753375F79CEA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE6DCFC62D3A6045DAD7166D /* Pods-YPGardens.debug.xcconfig */,
+				A5F3F0B2EE9351F8A24083EA /* Pods-YPGardens.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 565F52ED22E90FEE00B06350 /* Build configuration list for PBXNativeTarget "YPGardens" */;
 			buildPhases = (
+				57CD4099669F9EBEBAB33536 /* [CP] Check Pods Manifest.lock */,
 				565F52D722E90FEC00B06350 /* Sources */,
 				565F52D822E90FEC00B06350 /* Frameworks */,
 				565F52D922E90FEC00B06350 /* Resources */,
+				42D6EE889EC13B32653A31D0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,18 +162,64 @@
 			files = (
 				565F52E922E90FEE00B06350 /* LaunchScreen.storyboard in Resources */,
 				565F52E622E90FEE00B06350 /* Assets.xcassets in Resources */,
-				565F52E422E90FEC00B06350 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42D6EE889EC13B32653A31D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YPGardens/Pods-YPGardens-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YPGardens/Pods-YPGardens-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YPGardens/Pods-YPGardens-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57CD4099669F9EBEBAB33536 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YPGardens-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		565F52D722E90FEC00B06350 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				565F52E122E90FEC00B06350 /* ViewController.swift in Sources */,
+				567E14A922E925DC00ED72E8 /* Style.swift in Sources */,
+				565F52E122E90FEC00B06350 /* MainViewController.swift in Sources */,
+				567E14AD22E930BB00ED72E8 /* WaterLevelView.swift in Sources */,
+				565F52F322E9133A00B06350 /* PlantTableViewCell.swift in Sources */,
+				565F52F122E9107B00B06350 /* Plant.swift in Sources */,
+				567E14AB22E92B0700ED72E8 /* PlantDetailsViewController.swift in Sources */,
 				565F52DF22E90FEC00B06350 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +227,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		565F52E222E90FEC00B06350 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				565F52E322E90FEC00B06350 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		565F52E722E90FEE00B06350 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,6 +356,7 @@
 		};
 		565F52EE22E90FEE00B06350 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6DCFC62D3A6045DAD7166D /* Pods-YPGardens.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +375,7 @@
 		};
 		565F52EF22E90FEE00B06350 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5F3F0B2EE9351F8A24083EA /* Pods-YPGardens.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
