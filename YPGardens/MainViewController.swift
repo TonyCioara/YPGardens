@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         setupCollectionView()
         setupViews()
+        Networking.shared.connect()
     }
 
     private func setupViews() {

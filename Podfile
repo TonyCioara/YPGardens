@@ -7,5 +7,5 @@ target 'YPGardens' do
 
   # Pods for YPGardens
   pod 'SnapKit', '~> 5.0.0'
-
+  pod 'Starscream', '~> 3.0.2'
 end
