@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
         Plant(name: "Planty", description: "Succulent", waterLevel: 0.1, waterLimit: 0.1, image: #imageLiteral(resourceName: "planty")),
         Plant(name: "Steve", description: "Secretly Planty", waterLevel: 1, waterLimit: 0.2, image: #imageLiteral(resourceName: "planty")),
         Plant(name: "Planty", description: "Succulent", waterLevel: 0.5, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "The best plant", waterLevel: 0.7, waterLimit: 0.5, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "The best plant in the name of all plants this plant is the absolute greatest", waterLevel: 0.7, waterLimit: 0.5, image: #imageLiteral(resourceName: "planty")),
         Plant(name: "Planty", description: "Succulent", waterLevel: 0.9, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
         Plant(name: "Steve", description: "Secretly Planty", waterLevel: 1, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
     ]
@@ -71,8 +71,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlantDetailsViewController(plant: plantData[indexPath.item])
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = PlantDetailsViewController(plant: plantData[indexPath.item])
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -33,10 +33,11 @@ class PlantCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         self.addSubview(containerView)
-        [plantImageView, plantNameLabel, plantDescriptionLabel, waterButton, waterDropIcon, waterLevelView].forEach { (view) in
+        [plantImageView, plantNameLabel, dotView, plantDescriptionLabel, waterButton, waterDropIcon, waterLevelView, calendarIcon, lastWateredLabel].forEach { (view) in
             containerView.addSubview(view)
         }
         plantImageView.addSubview(shadowLayerView)
+        waterButton.addTarget(self, action: #selector(waterPlant), for: .touchUpInside)
         
         containerView.snp.makeConstraints { (make) in
             make.top.bottom.right.left.equalToSuperview().inset(8)
@@ -47,6 +48,7 @@ class PlantCollectionViewCell: UICollectionViewCell {
             make.width.equalTo(plantImageView.snp.height).multipliedBy(1.62)
         }
         
+        
         shadowLayerView.snp.makeConstraints { (make) in
             make.left.right.bottom.top.equalToSuperview()
         }
@@ -56,9 +58,16 @@ class PlantCollectionViewCell: UICollectionViewCell {
             make.bottom.equalTo(plantImageView.snp.bottom).offset(-8)
         }
         
+        dotView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(plantDescriptionLabel.snp.centerY)
+            make.centerX.equalTo(waterDropIcon.snp.centerX)
+            make.height.width.equalTo(6)
+        }
+        
         plantDescriptionLabel.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview().inset(8)
-            make.top.equalTo(plantImageView.snp.bottom).offset(8)
+            make.left.equalTo(dotView.snp.right).offset(8)
+            make.right.equalToSuperview().inset(8)
+            make.top.equalTo(plantImageView.snp.bottom).offset(24)
         }
         
         waterDropIcon.snp.makeConstraints { (make) in
@@ -69,10 +78,21 @@ class PlantCollectionViewCell: UICollectionViewCell {
         }
         
         waterLevelView.snp.makeConstraints { (make) in
-            make.top.equalTo(plantDescriptionLabel.snp.bottom).offset(8)
+            make.top.equalTo(plantDescriptionLabel.snp.bottom).offset(20)
             make.right.equalToSuperview().inset(16)
             make.left.equalTo(waterDropIcon.snp.right).offset(8)
             make.height.equalTo(32)
+        }
+        
+        calendarIcon.snp.makeConstraints { (make) in
+            make.top.equalTo(waterLevelView.snp.bottom).offset(24)
+            make.left.equalToSuperview().inset(14)
+            make.height.width.equalTo(24)
+        }
+        
+        lastWateredLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(waterLevelView.snp.bottom).offset(24)
+            make.left.equalTo(calendarIcon.snp.right).offset(8)
         }
         
         waterButton.snp.makeConstraints { (make) in
@@ -80,7 +100,10 @@ class PlantCollectionViewCell: UICollectionViewCell {
             make.bottom.equalToSuperview().inset(12)
             make.height.equalTo(36)
         }
-        
+    }
+    
+    @objc func waterPlant() {
+        print("Tapped: \(plantNameLabel.text!)")
     }
     
 //    Views
@@ -110,6 +133,13 @@ class PlantCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    private let dotView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 3
+        view.backgroundColor = .gray
+        return view
+    }()
+    
     private let plantNameLabel: UILabel = {
         let label = UILabel()
         label.font = AppFonts.title
@@ -120,7 +150,7 @@ class PlantCollectionViewCell: UICollectionViewCell {
     private let plantDescriptionLabel: UILabel = {
         let label = UILabel()
         label.font = AppFonts.body
-        label.numberOfLines = 3
+        label.numberOfLines = 2
         return label
     }()
     
@@ -145,6 +175,20 @@ class PlantCollectionViewCell: UICollectionViewCell {
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
         return view
+    }()
+    
+    private let calendarIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = #imageLiteral(resourceName: "icons8-calendar-50")
+        return imageView
+    }()
+    
+    private let lastWateredLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Last watered: 5 days ago"
+        label.font = AppFonts.body
+        label.textColor = UIColor.darkGray
+        return label
     }()
     
 }
