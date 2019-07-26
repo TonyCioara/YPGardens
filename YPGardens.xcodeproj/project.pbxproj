@@ -12,7 +12,7 @@
 		565F52E622E90FEE00B06350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565F52E522E90FEE00B06350 /* Assets.xcassets */; };
 		565F52E922E90FEE00B06350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565F52E722E90FEE00B06350 /* LaunchScreen.storyboard */; };
 		565F52F122E9107B00B06350 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F52F022E9107B00B06350 /* Plant.swift */; };
-		565F52F322E9133A00B06350 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F52F222E9133A00B06350 /* PlantTableViewCell.swift */; };
+		565F52F322E9133A00B06350 /* PlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F52F222E9133A00B06350 /* PlantCollectionViewCell.swift */; };
 		567E14A922E925DC00ED72E8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14A822E925DC00ED72E8 /* Style.swift */; };
 		567E14AB22E92B0700ED72E8 /* PlantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */; };
 		567E14AD22E930BB00ED72E8 /* WaterLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */; };
@@ -27,7 +27,7 @@
 		565F52E822E90FEE00B06350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		565F52EA22E90FEE00B06350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		565F52F022E9107B00B06350 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
-		565F52F222E9133A00B06350 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		565F52F222E9133A00B06350 /* PlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionViewCell.swift; sourceTree = "<group>"; };
 		567E14A822E925DC00ED72E8 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailsViewController.swift; sourceTree = "<group>"; };
 		567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLevelView.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 				565F52E022E90FEC00B06350 /* MainViewController.swift */,
 				567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */,
 				567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */,
-				565F52F222E9133A00B06350 /* PlantTableViewCell.swift */,
+				565F52F222E9133A00B06350 /* PlantCollectionViewCell.swift */,
 				565F52F022E9107B00B06350 /* Plant.swift */,
 				565F52E522E90FEE00B06350 /* Assets.xcassets */,
 				565F52E722E90FEE00B06350 /* LaunchScreen.storyboard */,
@@ -217,7 +217,7 @@
 				567E14A922E925DC00ED72E8 /* Style.swift in Sources */,
 				565F52E122E90FEC00B06350 /* MainViewController.swift in Sources */,
 				567E14AD22E930BB00ED72E8 /* WaterLevelView.swift in Sources */,
-				565F52F322E9133A00B06350 /* PlantTableViewCell.swift in Sources */,
+				565F52F322E9133A00B06350 /* PlantCollectionViewCell.swift in Sources */,
 				565F52F122E9107B00B06350 /* Plant.swift in Sources */,
 				567E14AB22E92B0700ED72E8 /* PlantDetailsViewController.swift in Sources */,
 				565F52DF22E90FEC00B06350 /* AppDelegate.swift in Sources */,
@@ -360,7 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWWJUMURFW;
+				DEVELOPMENT_TEAM = SBSSF9BESA;
 				INFOPLIST_FILE = YPGardens/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,7 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWWJUMURFW;
+				DEVELOPMENT_TEAM = SBSSF9BESA;
 				INFOPLIST_FILE = YPGardens/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

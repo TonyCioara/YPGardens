@@ -8,52 +8,58 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class WaterLevelView: UIView {
     
-    func setup(plant: Plant) {
-        
-        setupViews(plant: plant)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
     }
     
-    private func setupViews(plant: Plant) {
-        [waterView].forEach { (view) in
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var widthConstraint: Constraint?
+    
+    func setup(plant: Plant) {
+        self.backgroundColor = #colorLiteral(red: 0.8628115058, green: 0.8629567623, blue: 0.8627924323, alpha: 1)
+        widthConstraint?.deactivate()
+        waterView.snp.makeConstraints { (make) in
+            self.widthConstraint = make.width.equalToSuperview().multipliedBy(min(1, plant.waterLevel)).constraint
+        }
+        percentageLabel.text = String(Int(plant.waterLevel * 100)) + "%"
+    }
+    
+    private func setupViews() {
+        
+        [waterView, percentageLabel].forEach { (view) in
             self.addSubview(view)
         }
         
-        waterView.backgroundColor = Color.getGradientColor(percentage: CGFloat(min(1, plant.waterLevel)))
         waterView.snp.makeConstraints { (make) in
-            make.bottom.left.top.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(min(1, plant.waterLevel))
+            self.widthConstraint = make.width.equalToSuperview().constraint
+            make.bottom.top.left.equalToSuperview()
         }
         
-//        limitView.snp.makeConstraints { (make) in
-//            make.bottom.left.top.equalToSuperview()
-//            make.width.equalToSuperview().multipliedBy(min(1, plant.waterLimit))
-//        }
+        percentageLabel.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+        
     }
     
 //    Views
     private let waterView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppColors.mainBlue
+        view.backgroundColor = AppColors.waterBlue
         return view
     }()
     
-    private struct Color {
-        let r: CGFloat
-        let g: CGFloat
-        let b: CGFloat
-        
-        static func getGradientColor(percentage: CGFloat) -> UIColor {
-            let from = Color(r: 229, g: 109, b: 0)
-            let to = Color(r: 0, g: 109, b: 229)
-            return UIColor(
-                red: (from.r + (to.r - from.r) * percentage) / 255,
-                green: (from.g + (to.g - from.g) * percentage) / 255,
-                blue: (from.b + (to.b - from.b) * percentage) / 255,
-                alpha: 1)
-            
-        }
-    }
+    private let percentageLabel: UILabel = {
+        let label = UILabel()
+        label.font = AppFonts.subtitile
+        label.textColor = UIColor.white
+        return label
+    }()
 }

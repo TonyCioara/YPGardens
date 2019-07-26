@@ -12,19 +12,21 @@ class MainViewController: UIViewController {
 
     private var plantData: [Plant] = [
         Plant(name: "Planty", description: "Succulent", waterLevel: 0.1, waterLimit: 0.1, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "Secretly Planty", waterLevel: 0.3, waterLimit: 0.2, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "Secretly Planty", waterLevel: 1, waterLimit: 0.2, image: #imageLiteral(resourceName: "planty")),
         Plant(name: "Planty", description: "Succulent", waterLevel: 0.5, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "The best plant in the business of the best plants ever", waterLevel: 0.7, waterLimit: 0.5, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "The best plant", waterLevel: 0.7, waterLimit: 0.5, image: #imageLiteral(resourceName: "planty")),
         Plant(name: "Planty", description: "Succulent", waterLevel: 0.9, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
         Plant(name: "Steve", description: "Secretly Planty", waterLevel: 1, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
     ]
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        layout.scrollDirection = .horizontal
         let collectionView =  UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
+        collectionView.isPagingEnabled = true
         return collectionView
     }()
     
@@ -45,7 +47,8 @@ class MainViewController: UIViewController {
     private func setupViews() {
         self.view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
-            make.left.right.bottom.top.equalToSuperview()
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
         }
     }
 
@@ -63,7 +66,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width / 2, height: self.view.bounds.width / 2 + 40)
+        return CGSize(width: self.view.bounds.width - 40, height: collectionView.bounds.height - 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -71,4 +74,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension MainViewController: UIScrollViewDelegate {
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        targetContentOffset.pointee = scrollView.contentOffset
+        var factor: CGFloat = 0.5
+        if velocity.x < 0 {
+            factor = -factor
+        }
+        let indexPath = IndexPath(row: (Int(scrollView.contentOffset.x/(self.view.bounds.width - 40) + factor)), section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+    }
 }

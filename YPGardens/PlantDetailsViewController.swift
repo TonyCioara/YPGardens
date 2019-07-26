@@ -27,7 +27,7 @@ class PlantDetailsViewController: UIViewController {
     }
     
     private func setupViews() {
-        [headerImageView, dotView, plantDescriptionLabel, waterLevelView, waterDropIcon, waterPercentageLabel].forEach { (view) in
+        [headerImageView, dotView, plantDescriptionLabel, waterDropIcon, waterPercentageLabel].forEach { (view) in
             self.view.addSubview(view)
         }
         
@@ -96,10 +96,10 @@ class PlantDetailsViewController: UIViewController {
         return label
     }()
     
-    private let waterLevelView: WaterLevelView = {
-        let view = WaterLevelView()
-        return view
-    }()
+//    private let waterLevelView: WaterLevelView = {
+//        let view = WaterLevelView()
+//        return view
+//    }()
     
     private let dotView: UIView = {
         let view = UIView()
