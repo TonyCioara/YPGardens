@@ -11,12 +11,12 @@ import UIKit
 class MainViewController: UIViewController {
 
     private var plantData: [Plant] = [
-        Plant(name: "Planty", description: "Succulent", waterLevel: 0.1, waterLimit: 0.1, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "Secretly Planty", waterLevel: 0.3, waterLimit: 0.2, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Planty", description: "Succulent", waterLevel: 0.5, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "The best plant in the business of the best plants ever", waterLevel: 0.7, waterLimit: 0.5, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Planty", description: "Succulent", waterLevel: 0.9, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
-        Plant(name: "Steve", description: "Secretly Planty", waterLevel: 1, waterLimit: 0.3, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Planty", description: "Succulent", lastWatered: nil, waterLevel: 0, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "Secretly Planty", lastWatered: nil, waterLevel: 0, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Planty", description: "Succulent", lastWatered: nil, waterLevel: 0, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "The best plant in the business of the best plants ever", lastWatered: nil, waterLevel: 0, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Planty", description: "Succulent", lastWatered: nil, waterLevel: 0, image: #imageLiteral(resourceName: "planty")),
+        Plant(name: "Steve", description: "Secretly Planty", lastWatered: nil, waterLevel: 0, image: #imageLiteral(resourceName: "planty")),
     ]
     
     private let collectionView: UICollectionView = {
@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         setupCollectionView()
         setupViews()
+        Networking.shared.delegate = self
         Networking.shared.connect()
     }
 
@@ -72,4 +73,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension MainViewController: NetworkingDelegate {
+    func didUpdateWaterLevels(waterLevels: [WaterLevelUpdate]) {
+        self.plantData[0].waterLevel = Helpers.calculateWaterPercentage(waterLevels: waterLevels)
+        if let lastWaterDate = Helpers.calculateLastWatered(waterLevels: waterLevels) {
+            self.plantData[0].lastWatered = lastWaterDate
+        }
+        collectionView.reloadData()
+    }
 }

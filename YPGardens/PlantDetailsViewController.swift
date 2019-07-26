@@ -37,11 +37,6 @@ class PlantDetailsViewController: UIViewController {
             make.width.equalTo(headerImageView.snp.height).multipliedBy(1.62)
         }
         
-//        waterLevelView.snp.makeConstraints { (make) in
-//            make.left.right.equalToSuperview()
-//            make.top.equalTo(headerImageView.snp.bottom)
-//            make.height.equalTo(8)
-//        }
         dotView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(16)
             make.centerY.equalTo(plantDescriptionLabel.snp.centerY)

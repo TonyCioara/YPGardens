@@ -17,6 +17,8 @@
 		567E14AB22E92B0700ED72E8 /* PlantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */; };
 		567E14AD22E930BB00ED72E8 /* WaterLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */; };
 		567E14AF22EA3C0F00ED72E8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14AE22EA3C0F00ED72E8 /* Networking.swift */; };
+		567E14B222EB9AFD00ED72E8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14B122EB9AFD00ED72E8 /* Helpers.swift */; };
+		567E14B522EBA4FA00ED72E8 /* WaterLevelUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567E14B422EBA4FA00ED72E8 /* WaterLevelUpdate.swift */; };
 		E095E66FC5045036C8D654EA /* Pods_YPGardens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05FB40B1F89EC879E80E83C /* Pods_YPGardens.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailsViewController.swift; sourceTree = "<group>"; };
 		567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLevelView.swift; sourceTree = "<group>"; };
 		567E14AE22EA3C0F00ED72E8 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		567E14B122EB9AFD00ED72E8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		567E14B422EBA4FA00ED72E8 /* WaterLevelUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLevelUpdate.swift; sourceTree = "<group>"; };
 		A5F3F0B2EE9351F8A24083EA /* Pods-YPGardens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPGardens.release.xcconfig"; path = "Target Support Files/Pods-YPGardens/Pods-YPGardens.release.xcconfig"; sourceTree = "<group>"; };
 		CE6DCFC62D3A6045DAD7166D /* Pods-YPGardens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPGardens.debug.xcconfig"; path = "Target Support Files/Pods-YPGardens/Pods-YPGardens.debug.xcconfig"; sourceTree = "<group>"; };
 		F05FB40B1F89EC879E80E83C /* Pods_YPGardens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YPGardens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,14 +80,32 @@
 				567E14AC22E930BB00ED72E8 /* WaterLevelView.swift */,
 				567E14AA22E92B0700ED72E8 /* PlantDetailsViewController.swift */,
 				565F52F222E9133A00B06350 /* PlantTableViewCell.swift */,
-				565F52F022E9107B00B06350 /* Plant.swift */,
+				567E14B022EB9A6100ED72E8 /* Helpers */,
+				567E14B322EBA4E400ED72E8 /* Models */,
 				565F52E522E90FEE00B06350 /* Assets.xcassets */,
 				565F52E722E90FEE00B06350 /* LaunchScreen.storyboard */,
 				565F52EA22E90FEE00B06350 /* Info.plist */,
-				567E14A822E925DC00ED72E8 /* Style.swift */,
-				567E14AE22EA3C0F00ED72E8 /* Networking.swift */,
 			);
 			path = YPGardens;
+			sourceTree = "<group>";
+		};
+		567E14B022EB9A6100ED72E8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				567E14A822E925DC00ED72E8 /* Style.swift */,
+				567E14AE22EA3C0F00ED72E8 /* Networking.swift */,
+				567E14B122EB9AFD00ED72E8 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		567E14B322EBA4E400ED72E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				565F52F022E9107B00B06350 /* Plant.swift */,
+				567E14B422EBA4FA00ED72E8 /* WaterLevelUpdate.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EF328E99272CA87FEB866CA6 /* Frameworks */ = {
@@ -221,6 +243,8 @@
 				565F52E122E90FEC00B06350 /* MainViewController.swift in Sources */,
 				567E14AD22E930BB00ED72E8 /* WaterLevelView.swift in Sources */,
 				567E14AF22EA3C0F00ED72E8 /* Networking.swift in Sources */,
+				567E14B222EB9AFD00ED72E8 /* Helpers.swift in Sources */,
+				567E14B522EBA4FA00ED72E8 /* WaterLevelUpdate.swift in Sources */,
 				565F52F322E9133A00B06350 /* PlantTableViewCell.swift in Sources */,
 				565F52F122E9107B00B06350 /* Plant.swift in Sources */,
 				567E14AB22E92B0700ED72E8 /* PlantDetailsViewController.swift in Sources */,

@@ -12,7 +12,7 @@ import UIKit
 struct Plant {
     let name: String
     let description: String
-    let waterLevel: Float
-    let waterLimit: Float
+    var lastWatered: Date?
+    var waterLevel: Float
     let image: UIImage
 }

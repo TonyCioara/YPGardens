@@ -8,6 +8,7 @@
 
 import Foundation
 import Starscream
+import KeychainSwift
 
 enum Sender: String {
     case app = "app"
@@ -22,11 +23,25 @@ enum Command: String {
     case dataRequest = "data_request"
     case data = "data"
     case error = "error"
+    case register = "register"
+}
+
+protocol NetworkingDelegate {
+    func didUpdateWaterLevels(waterLevels: [WaterLevelUpdate])
 }
 
 class Networking {
     static let shared = Networking()
     let socket = WebSocket(url: URL(string:"ws://52.53.195.201:8080")!)
+    let keychain = KeychainSwift()
+    var waterLevels = [WaterLevelUpdate]() {
+        didSet {
+            if let delegate = self.delegate {
+                delegate.didUpdateWaterLevels(waterLevels: self.waterLevels)
+            }
+        }
+    }
+    var delegate: NetworkingDelegate?
     
     init() {
         socket.delegate = self
@@ -66,6 +81,11 @@ extension Networking: WebSocketDelegate {
     
     func websocketDidConnect(socket: WebSocketClient) {
         print("websocket is connected")
+        guard let _ = keychain.getBool("did_register") else {
+            keychain.set(true, forKey: "did_register")
+            send(sender: .app, command: .register)
+            return
+        }
         _ = send(sender: .app, command: .dataRequest)
     }
     
@@ -82,6 +102,8 @@ extension Networking: WebSocketDelegate {
             switch command {
             case .error:
                 print("error getting data: ", text)
+            case .register:
+                _ = send(sender: .app, command: .dataRequest)
             case .data:
                 if components.count <= 2 {
                     return
@@ -90,14 +112,12 @@ extension Networking: WebSocketDelegate {
                     return
                 }
                 do {
-                    if let jsonDict = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]
-                    {
-                        print(jsonDict) // use the json here
-                    } else {
-                        print("bad json")
-                    }
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .millisecondsSince1970
+                    let waterLevels = try decoder.decode([WaterLevelUpdate].self, from: data)
+                    self.waterLevels = waterLevels
                 } catch let error as NSError {
-                    print(error)
+                    print("ERROR: ", error)
                 }
             default:
                 return

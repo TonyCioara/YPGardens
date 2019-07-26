@@ -1,20 +1,24 @@
 PODS:
+  - KeychainSwift (16.0.1)
   - SnapKit (5.0.0)
   - Starscream (3.0.6)
 
 DEPENDENCIES:
+  - KeychainSwift (~> 16.0)
   - SnapKit (~> 5.0.0)
   - Starscream (~> 3.0.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - KeychainSwift
     - SnapKit
     - Starscream
 
 SPEC CHECKSUMS:
+  KeychainSwift: 4209611373ca4a098e09b1e547eebd87c544dcc4
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
 
-PODFILE CHECKSUM: f4f438a6ce2310ca130da3209a5c547012e90a11
+PODFILE CHECKSUM: c905360552ecc08735f0a2fab0d38f36e97a152a
 
 COCOAPODS: 1.7.5
