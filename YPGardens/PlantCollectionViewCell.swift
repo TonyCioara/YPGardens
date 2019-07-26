@@ -33,9 +33,10 @@ class PlantCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         self.addSubview(containerView)
-        [plantImageView, shadowLayerView, plantNameLabel, plantDescriptionLabel, waterButton, waterDropIcon, waterLevelView].forEach { (view) in
+        [plantImageView, plantNameLabel, plantDescriptionLabel, waterButton, waterDropIcon, waterLevelView].forEach { (view) in
             containerView.addSubview(view)
         }
+        plantImageView.addSubview(shadowLayerView)
         
         containerView.snp.makeConstraints { (make) in
             make.top.bottom.right.left.equalToSuperview().inset(8)
@@ -47,8 +48,7 @@ class PlantCollectionViewCell: UICollectionViewCell {
         }
         
         shadowLayerView.snp.makeConstraints { (make) in
-            make.top.bottom.right.left.equalTo(plantImageView)
-            
+            make.left.right.bottom.top.equalToSuperview()
         }
         
         plantNameLabel.snp.makeConstraints { (make) in
@@ -92,7 +92,6 @@ class PlantCollectionViewCell: UICollectionViewCell {
         view.layer.shadowColor = UIColor.gray.cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         view.layer.cornerRadius = 4
-        
         return view
     }()
     
@@ -104,10 +103,10 @@ class PlantCollectionViewCell: UICollectionViewCell {
     
     private let plantImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 4
-        imageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        imageView.contentMode = .scaleAspectFill
+        imageView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         return imageView
     }()
     
